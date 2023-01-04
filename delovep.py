@@ -23,8 +23,13 @@ class Empleado(persona):
             print("debe pagar impuesto")
         else:
             print("no debes de pagar")    
+ 
+ 
+    def __getattribute__(self, __name: str) -> Any:
+        return super().__getattribute__(__name)
 
-
+    def  __delattr__(self, __name: str) -> None:
+        return super().__delattr__(__name)    
 #bloque principal
 personas1=persona()
 persona1.Mostrar()
