@@ -1,7 +1,7 @@
 class traingulos():
     def __init__(self):
         self.lado1=int(input("ingrese el valor del  primer lado"))
-        self.lado2=int(input("ingrese el calor de segundo lado"))
+        self.lado2=int(input("digame cual es el vALOR DEL SEGUNDO LADO"))
         self.lado3=int(input("ingrese el valor del tercer lado"))
         
     def mostrar(self):
