@@ -1,9 +1,9 @@
 # creamos la clase Cuenta
 class Cuenta:
 	# inicializamos los atributos de la clase
-	def __init__(self,):
-		self.titular=input("cual es el nombre del titular")
-		self.cantidad=int(input("ingrese la cantidad de dinero"))
+	def __init__(self,titular,cantidad):
+		self.titular=titular
+		self.cantidad=cantidad
  
 	# imprimimos los datos
 	def imprimir(self):
@@ -15,8 +15,8 @@ class Cuenta:
 # esta clase hereda atributos de la clase Cuenta
 class CajaAhorro(Cuenta):
 	# iniciamos los atributos de la clase
-	def __init__(self):
-		super().__init__()
+	def __init__(self,titular,cantidad):
+		super().__init__(titular,cantidad)
  
 	# imprimimos los datos de la cuenta
 	def imprimir(self):
@@ -28,10 +28,10 @@ class CajaAhorro(Cuenta):
 # esta clase también hereda atributos de la clase Cuenta
 class PlazoFijo(Cuenta):
 	# inicializamos los atributos de la clase
-	def __init__(self):
-		super().__init__()
-		self.plazo=float(int(input("ingrese el plazo")))
-		self.interes=float(self.plazo/100)
+	def __init__(self,titular,cantidad,plazo,interes):
+		super().__init__(titular,cantidad)
+		self.plazo=plazo
+		self.interes=interes
  
  
 	# calculamos la ganancia
@@ -50,8 +50,8 @@ class PlazoFijo(Cuenta):
  
  
 # bloque principal
-caja1=CajaAhorro()
+caja1=CajaAhorro("juan",5000)
 caja1.imprimir()
  
-plazo1=PlazoFijo()
+plazo1=PlazoFijo("daysel",8000,365,1.2)
 plazo1.imprimir()
